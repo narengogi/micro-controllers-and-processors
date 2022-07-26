@@ -1,8 +1,8 @@
 #include "ESP8266WiFi.h"
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "Ittina"; //Enter SSID
-const char* password = "@560037@"; //Enter Password
+const char* ssid = ""; //Enter SSID
+const char* password = ""; //Enter Password
 const char* endpoint = "127.0.0.1";
 
 void setup(void)
@@ -28,7 +28,7 @@ void loop()
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     WiFiClient client;
-    http.begin(client, "https://www.google.com");  //Specify request destination
+    http.begin(client, "http://www.google.com");  //Specify request destination
     int httpCode = http.GET();     //Send the request 
     if (httpCode > 0) { //Check the returning code
 
